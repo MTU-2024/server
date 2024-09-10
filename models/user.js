@@ -51,6 +51,26 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       role: DataTypes.STRING,
+      satKer: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: {
+            msg: "Satuan Kerja is required",
+          },
+          notNull: { msg: "Satuan Kerja is required" },
+        },
+      },
+      phoneNumber: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: {
+            msg: "Phone Number is required",
+          },
+          notNull: { msg: "Phone Number is required" },
+        },
+      },
     },
     {
       hooks: {

@@ -24,6 +24,7 @@ class UserController {
             name: user.name,
             email: user.email,
             role: user.role,
+            satKer: user.satKer
           };
           const access_token = createToken(payload);
           res.status(200).json({ access_token, payload });
@@ -36,12 +37,14 @@ class UserController {
   }
   static async register(req, res, next) {
     try {
-      const { name, email, password, role } = req.body;
+      const { name, email, password, role, satKer, phoneNumber } = req.body;
       const user = await User.create({
         name,
         email,
         password,
         role,
+        satKer,
+        phoneNumber,
       });
       res.status(201).json({ message: `user ${user.name} has been created` });
     } catch (err) {

@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Items', {
+    await queryInterface.createTable('Reminders', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,34 +12,28 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      purchaseDate: {
-        type: Sequelize.STRING
-      },
-      productionYear: {
-        type: Sequelize.STRING
-      },
-      image: {
-        type: Sequelize.BLOB
-      },
-      unitCode: {
-        type: Sequelize.STRING
-      },
-      status: {
-        type: Sequelize.STRING
-      },
       type: {
         type: Sequelize.STRING
       },
-      warrantyExpired: {
+      brand: {
         type: Sequelize.STRING
       },
-      description: {
+      lessValue: {
         type: Sequelize.STRING
       },
-      serialNumber: {
+      purchaseDate: {
         type: Sequelize.STRING
       },
-      assignedFor: {
+      expiredDate: {
+        type: Sequelize.STRING
+      },
+      emailTo: {
+        type: Sequelize.STRING
+      },
+      dateReminder: {
+        type: Sequelize.STRING
+      },
+      note: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -53,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Items');
+    await queryInterface.dropTable('Reminders');
   }
 };

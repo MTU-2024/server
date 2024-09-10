@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Items', {
+    await queryInterface.createTable('pengaduans', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,34 +12,13 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      purchaseDate: {
+      phoneNumber: {
         type: Sequelize.STRING
       },
-      productionYear: {
+      context: {
         type: Sequelize.STRING
       },
-      image: {
-        type: Sequelize.BLOB
-      },
-      unitCode: {
-        type: Sequelize.STRING
-      },
-      status: {
-        type: Sequelize.STRING
-      },
-      type: {
-        type: Sequelize.STRING
-      },
-      warrantyExpired: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
-      serialNumber: {
-        type: Sequelize.STRING
-      },
-      assignedFor: {
+      message: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -53,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Items');
+    await queryInterface.dropTable('pengaduans');
   }
 };

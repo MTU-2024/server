@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .card {
+            background-color: #f8f9fa;
+            border: 1px solid #e3e3e3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .card-body {
+            margin: 15px 0;
+            font-size: 16px;
+            color: #6c757d;
+        }
+        .card-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #868e96;
+        }
+        .highlight-name {
+            color: #007bff;
+        }
+        .highlight-context {
+            color: 'info';
+        }
+        .highlight-message {
+            color: 'info';
+        }
+        .highlight-phone {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-title">
+            <span class="highlight-context">{{context}}</span>
+        </div>
+        <div class="card-body">
+            <span class="highlight-message">{{message}}</span>
+        </div>
+        <br>
+        <div class="card-body">Pengadu: 
+            <span class="highlight-name">{{name}}</span>
+        </div>
+        <div class="card-body">Nomor Telepon: 
+            <span class="highlight-phone">{{phoneNumber}}</span>
+        </div>
+    </div>
+</body>
+</html>
