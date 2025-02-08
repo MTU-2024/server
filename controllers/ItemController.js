@@ -105,6 +105,35 @@ class ItemController {
     }
   }
 
+  static async switchStatus(req, res, next) {
+    try {
+      const { id } = req.params;
+      let item = await Item.findByPk(id);
+  
+      if (!item) {
+        throw {
+          code: 400,
+          name: "Bad Request",
+          message: `Item id ${id} not found`,
+        };
+      }
+  
+      let newStatus = item.status === "ready" ? "not ready" : "ready";
+  
+      let update = await Item.update(
+        { status: newStatus },
+        { where: { id } }
+      );
+  
+      res.status(200).json({
+        message: `Status berhasil diubah menjadi ${newStatus}`,
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+  
+
   static async deleteItem(req, res, next) {
     try {
       const { id } = req.params;

@@ -6,5 +6,6 @@ router.delete("/", ItemController.deleteItem);
 router.post("/", ItemController.addItem);
 router.put("/:id", ItemController.editItem);
 router.delete("/:id",ItemController.deleteItem);
+router.put("/:id/status", ItemController.switchStatus);
 
 module.exports = router;
